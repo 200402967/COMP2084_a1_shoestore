@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using Microsoft.AspNetCore.Mvc;
-using COMP2084_week3F2019_musicstore.Models;
+using COMP2084_a1_shoestore.Models;
 
-namespace COMP2084_week3F2019_musicstore.Controllers
+namespace COMP2084_a1_shoestore.Controllers
 {
     public class StoreController : Controller
     {
@@ -15,7 +15,7 @@ namespace COMP2084_week3F2019_musicstore.Controllers
             return View();
         }
 
-        public IActionResult Browse(String genre)
+        public IActionResult Browse(String footwear)
         {
             return View();
         }
@@ -25,17 +25,17 @@ namespace COMP2084_week3F2019_musicstore.Controllers
             return View();
         }
 
-        
-        public IActionResult Albums()
+
+        public IActionResult shoeTypes()
         {
-            var albums = new List<Album>();
+            var shoeTypes = new List<shoeType>();
 
             for (int i = 0; i < 10; i++)
             {
-                albums.Add(new Album { Name = "Album" + i.ToString() });
+                shoeTypes.Add(new shoeType { Name = "shoeType" + i.ToString() });
             }
 
-            return View(albums);
+            return View(shoeTypes);
         }
 
 
