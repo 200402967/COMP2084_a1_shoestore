@@ -9,11 +9,11 @@ using COMP2084_week3F2019_musicstore.Models;
 
 namespace COMP2084_week3F2019_musicstore.Controllers
 {
-    public class AlbumsController : Controller
+    public class ShoeTypesController : Controller
     {
         private readonly MusicStoreContext _context;
 
-        public AlbumsController(MusicStoreContext context)
+        public ShoeTypesController(MusicStoreContext context)
         {
             _context = context;
         }

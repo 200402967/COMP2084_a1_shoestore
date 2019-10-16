@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using COMP2084_week3F2019_musicstore.Models;
+using COMP2084_a1_shoestore.Models;
 
-namespace COMP2084_week3F2019_musicstore.Controllers
+namespace COMP2084_a1_shoestore.Controllers
 {
     public class HomeController : Controller
     {
