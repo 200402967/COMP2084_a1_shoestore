@@ -28,7 +28,7 @@ namespace COMP2084_a1_shoestore.Controllers
 
         public IActionResult shoeTypes()
         {
-            var shoeTypes = new List<ShoeType>();
+            var ShoeType = new List<ShoeType>();
 
             for (int i = 0; i < 10; i++)
             {

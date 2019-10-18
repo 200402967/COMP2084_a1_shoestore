@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace COMP2084_week3F2019_musicstore.Data.Migrations
+namespace COMP2084_a1_shoestore.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

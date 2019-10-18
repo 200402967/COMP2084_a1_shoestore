@@ -11,9 +11,9 @@ namespace COMP2084_a1_shoestore.Controllers
 {
     public class ShoesController : Controller
     {
-        private readonly shoestoreContext _context;
+        private readonly ShoeStoreContext _context;
 
-        public ShoesController(shoestoreContext context)
+        public ShoesController(ShoeStoreContext context)
         {
             _context = context;
         }

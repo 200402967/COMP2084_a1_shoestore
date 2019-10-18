@@ -21,7 +21,7 @@ namespace COMP2084_a1_shoestore.Controllers
         // GET: Footwear
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Genre.ToListAsync());
+            return View(await _context.Footwear.ToListAsync());
         }
 
         // GET: Footwear/Details/5
@@ -32,14 +32,14 @@ namespace COMP2084_a1_shoestore.Controllers
                 return NotFound();
             }
 
-            var genre = await _context.Genre
-                .FirstOrDefaultAsync(m => m.GenreId == id);
-            if (genre == null)
+            var Footwear = await _context.Footwear
+                .FirstOrDefaultAsync(m => m.FootwearId == id);
+            if (Footwear == null)
             {
                 return NotFound();
             }
 
-            return View(genre);
+            return View(Footwear);
         }
 
         // GET: Footwear/Create
@@ -72,12 +72,12 @@ namespace COMP2084_a1_shoestore.Controllers
                 return NotFound();
             }
 
-            var genre = await _context.Genre.FindAsync(id);
-            if (genre == null)
+            var Footwear = await _context.Footwear.FindAsync(id);
+            if (Footwear == null)
             {
                 return NotFound();
             }
-            return View(genre);
+            return View(Footwear);
         }
 
         // POST: Footwear/Edit/5
@@ -101,7 +101,7 @@ namespace COMP2084_a1_shoestore.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!GenreExists(footwear.FootwearId))
+                    if (!FootwearExists(footwear.FootwearId))
                     {
                         return NotFound();
                     }
@@ -139,7 +139,7 @@ namespace COMP2084_a1_shoestore.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var footwear = await _context.Footwear.FindAsync(id);
-            _context.Genre.Remove(footwear);
+            _context.Footwear.Remove(footwear);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
