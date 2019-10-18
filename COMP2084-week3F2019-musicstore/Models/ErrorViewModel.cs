@@ -1,6 +1,6 @@
 using System;
 
-namespace COMP2084_week3F2019_musicstore.Models
+namespace COMP2084_a1_shoestore.Models
 {
     public class ErrorViewModel
     {

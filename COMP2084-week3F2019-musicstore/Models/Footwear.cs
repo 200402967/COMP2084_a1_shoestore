@@ -4,17 +4,17 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace COMP2084_week3F2019_musicstore.Models
+namespace COMP2084_a1_shoestore.Models
 {
     public class Footwear
     {
         [Key]
 
         
-        public int GenreId { get; set; }
+        public int FootwearId { get; set; }
 
         public string Name { get; set; }
 
-        public ICollection<Album> Albums { get; set; }
+        public ICollection<ShoeType> ShoeType { get; set; }
     }
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using COMP2084_week3F2019_musicstore.Models;
+using COMP2084_a1_shoestore.Models;
 
-namespace COMP2084_week3F2019_musicstore.Data
+namespace COMP2084_a1_shoestore.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
@@ -13,6 +13,6 @@ namespace COMP2084_week3F2019_musicstore.Data
             : base(options)
         {
         }
-        public DbSet<COMP2084_week3F2019_musicstore.Models.Song> Song { get; set; }
+        public DbSet<COMP2084_a1_shoestore.Models.Shoe> Shoe { get; set; }
     }
 }

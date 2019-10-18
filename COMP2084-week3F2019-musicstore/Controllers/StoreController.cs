@@ -28,14 +28,14 @@ namespace COMP2084_a1_shoestore.Controllers
 
         public IActionResult shoeTypes()
         {
-            var shoeTypes = new List<shoeType>();
+            var shoeTypes = new List<ShoeType>();
 
             for (int i = 0; i < 10; i++)
             {
-                shoeTypes.Add(new shoeType { Name = "shoeType" + i.ToString() });
+                ShoeType.Add(new ShoeType { Name = "ShoeType" + i.ToString() });
             }
 
-            return View(shoeTypes);
+            return View(ShoeType);
         }
 
 

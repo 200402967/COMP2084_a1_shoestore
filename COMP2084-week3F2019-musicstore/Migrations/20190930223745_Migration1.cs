@@ -2,14 +2,14 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace COMP2084week3F2019musicstore.Migrations
+namespace COMP2084_a1_shoestore.Migrations
 {
     public partial class Migration1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Genre",
+                name: "Footwear",
                 columns: table => new
                 {
                     GenreId = table.Column<int>(nullable: false)
@@ -18,75 +18,75 @@ namespace COMP2084week3F2019musicstore.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Genre", x => x.GenreId);
+                    table.PrimaryKey("PK_Footwear", x => x.FootwearId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Album",
+                name: "ShoeType",
                 columns: table => new
                 {
-                    AlbumId = table.Column<int>(nullable: false)
+                    ShoeTypeId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    GenreId = table.Column<int>(nullable: false),
+                    FootwearId = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true),
-                    Artist = table.Column<string>(nullable: true),
+                    Brand = table.Column<string>(nullable: true),
                     ReleaseDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Album", x => x.AlbumId);
+                    table.PrimaryKey("PK_ShoeType", x => x.ShoeTypeId);
                     table.ForeignKey(
-                        name: "FK_Album_Genre_GenreId",
-                        column: x => x.GenreId,
-                        principalTable: "Genre",
-                        principalColumn: "GenreId",
+                        name: "FK_ShoeType_Footwear_FootwearId",
+                        column: x => x.FootwearId,
+                        principalTable: "Footwear",
+                        principalColumn: "FootwearId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Song",
+                name: "Shoe",
                 columns: table => new
                 {
-                    SongId = table.Column<int>(nullable: false)
+                    ShoeId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    AlbumId = table.Column<int>(nullable: false),
-                    SongName = table.Column<string>(nullable: true),
-                    ArtistName = table.Column<string>(nullable: true),
-                    Featuring = table.Column<string>(nullable: true),
-                    RunTimeSeconds = table.Column<int>(nullable: false)
+                    ShoeTypeId = table.Column<int>(nullable: false),
+                    ShoeName = table.Column<string>(nullable: true),
+                    Brand = table.Column<string>(nullable: true),
+                    Color = table.Column<string>(nullable: true),
+                    Size = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Song", x => x.SongId);
+                    table.PrimaryKey("PK_Shoe", x => x.ShoeId);
                     table.ForeignKey(
-                        name: "FK_Song_Album_AlbumId",
-                        column: x => x.AlbumId,
-                        principalTable: "Album",
-                        principalColumn: "AlbumId",
+                        name: "FK_Shoe_ShoeType_ShoeTypeId",
+                        column: x => x.ShoeTypeId,
+                        principalTable: "ShoeType",
+                        principalColumn: "ShoeTypeId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Album_GenreId",
-                table: "Album",
-                column: "GenreId");
+                name: "IX_ShoeType_FootwearId",
+                table: "ShoeType",
+                column: "FootwearId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Song_AlbumId",
-                table: "Song",
-                column: "AlbumId");
+                name: "IX_Shoe_ShoeTypeId",
+                table: "Shoe",
+                column: "ShoeTypeId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Song");
+                name: "Shoe");
 
             migrationBuilder.DropTable(
-                name: "Album");
+                name: "ShoeType");
 
             migrationBuilder.DropTable(
-                name: "Genre");
+                name: "Footwear");
         }
     }
 }

@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using COMP2084_week3F2019_musicstore.Models;
+using COMP2084_a1_shoestore.Models;
 
-namespace COMP2084_week3F2019_musicstore.Models
+namespace COMP2084_a1_shoestore.Models
 {
-    public class MusicStoreContext : DbContext
+    public class ShoeStoreContext : DbContext
     {
-        public MusicStoreContext (DbContextOptions<MusicStoreContext> options)
+        public ShoeStoreContext (DbContextOptions<ShoeStoreContext> options)
             : base(options)
         {
         }
 
-        public DbSet<COMP2084_week3F2019_musicstore.Models.Footwear> Genre { get; set; }
+        public DbSet<COMP2084_a1_shoestore.Models.Footwear> Footwear { get; set; }
 
-        public DbSet<COMP2084_week3F2019_musicstore.Models.Album> Album { get; set; }
+        public DbSet<COMP2084_a1_shoestore.Models.ShoeType> ShoeType { get; set; }
 
-        public DbSet<COMP2084_week3F2019_musicstore.Models.Song> Song { get; set; }
+        public DbSet<COMP2084_a1_shoestore.Models.Shoe> Shoe { get; set; }
     }
 }

@@ -21,10 +21,10 @@ namespace COMP2084_week3F2019_musicstore.Controllers
         // GET: ShoeType
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Album.ToListAsync());
+            return View(await _context.ShoeType.ToListAsync());
         }
 
-        // GET: Albums/Details/5
+        // GET: ShoeType/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -32,39 +32,39 @@ namespace COMP2084_week3F2019_musicstore.Controllers
                 return NotFound();
             }
 
-            var album = await _context.Album
-                .FirstOrDefaultAsync(m => m.AlbumId == id);
-            if (album == null)
+            var ShoeType = await _context.ShoeType
+                .FirstOrDefaultAsync(m => m.ShoeTypeId == id);
+            if (ShoeType == null)
             {
                 return NotFound();
             }
 
-            return View(album);
+            return View(ShoeType);
         }
 
-        // GET: Albums/Create
+        // GET: ShoeType/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Albums/Create
+        // POST: ShoeType/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ShoeId,ShoeTypeId,ShoeName,Brand,Color,Size")] Album album)
+        public async Task<IActionResult> Create([Bind("ShoeId,ShoeTypeId,ShoeName,Brand,Color,Size")] ShoeType ShoeType)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(album);
+                _context.Add(ShoeType);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(album);
+            return View(ShoeType);
         }
 
-        // GET: Albums/Edit/5
+        // GET: ShoeType/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -72,22 +72,22 @@ namespace COMP2084_week3F2019_musicstore.Controllers
                 return NotFound();
             }
 
-            var album = await _context.Album.FindAsync(id);
-            if (album == null)
+            var ShoeType = await _context.ShoeType.FindAsync(id);
+            if (ShoeType == null)
             {
                 return NotFound();
             }
-            return View(album);
+            return View(ShoeType);
         }
 
-        // POST: Albums/Edit/5
+        // POST: ShoeType/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ShoeId,ShoeTypeId,ShoeName,Brand,Color,Size")] Album album)
+        public async Task<IActionResult> Edit(int id, [Bind("ShoeId,ShoeTypeId,ShoeName,Brand,Color,Size")] ShoeType ShoeType)
         {
-            if (id != album.AlbumId)
+            if (id != ShoeType.ShoeTypeId)
             {
                 return NotFound();
             }
@@ -96,12 +96,12 @@ namespace COMP2084_week3F2019_musicstore.Controllers
             {
                 try
                 {
-                    _context.Update(album);
+                    _context.Update(ShoeType);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AlbumExists(album.AlbumId))
+                    if (!AlbumExists(ShoeType.ShoeTypeId))
                     {
                         return NotFound();
                     }
@@ -112,10 +112,10 @@ namespace COMP2084_week3F2019_musicstore.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(album);
+            return View(ShoeType);
         }
 
-        // GET: Albums/Delete/5
+        // GET: ShoeType/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -123,30 +123,30 @@ namespace COMP2084_week3F2019_musicstore.Controllers
                 return NotFound();
             }
 
-            var album = await _context.Album
-                .FirstOrDefaultAsync(m => m.AlbumId == id);
-            if (album == null)
+            var ShoeType = await _context.ShoeType
+                .FirstOrDefaultAsync(m => m.ShoeTypeId == id);
+            if (ShoeType == null)
             {
                 return NotFound();
             }
 
-            return View(album);
+            return View(ShoeType);
         }
 
-        // POST: Albums/Delete/5
+        // POST: ShoeType/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var album = await _context.Album.FindAsync(id);
-            _context.Album.Remove(album);
+            var ShoeType = await _context.ShoeType.FindAsync(id);
+            _context.ShoeType.Remove(ShoeType);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool AlbumExists(int id)
+        private bool ShoeTypeExists(int id)
         {
-            return _context.Album.Any(e => e.AlbumId == id);
+            return _context.ShoeType.Any(e => e.ShoeTypeId == id);
         }
     }
 }
