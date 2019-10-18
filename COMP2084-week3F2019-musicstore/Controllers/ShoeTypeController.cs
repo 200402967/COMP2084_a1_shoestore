@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using COMP2084_a1_shoestore.Models;
 
-namespace COMP2084_week3F2019_musicstore.Controllers
+namespace COMP2084_a1_shoestore.Controllers
 {
     public class ShoeTypeController : Controller
     {
@@ -101,7 +101,7 @@ namespace COMP2084_week3F2019_musicstore.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AlbumExists(ShoeType.ShoeTypeId))
+                    if (!ShoeTypeExists(ShoeType.ShoeTypeId))
                     {
                         return NotFound();
                     }
