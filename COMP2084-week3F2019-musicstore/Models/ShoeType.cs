@@ -12,7 +12,6 @@ namespace COMP2084_a1_shoestore.Models
         [Key]
         public int ShoeTypeId { get; set; }
 
-
         [ForeignKey("Footwear")]
         public int FootwearId { get; set; }
 
@@ -22,7 +21,7 @@ namespace COMP2084_a1_shoestore.Models
 
         public ICollection<Shoe>Shoes {get; set;}
 
-        internal static void Add(ShoeType shoeType)
+        internal static void Add(ShoeType ShoeType)
         {
             throw new NotImplementedException();
         }
