@@ -14,7 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using COMP2084_week3F2019_musicstore.Models;
 
-namespace COMP2084_week3F2019_musicstore
+namespace COMP2084_a1_shoestore
 {
     public class Startup
     {
@@ -44,7 +44,7 @@ namespace COMP2084_week3F2019_musicstore
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<MusicStoreContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("MusicStoreContext")));
+                    options.UseSqlServer(Configuration.GetConnectionString("ShoeStoreContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace COMP2084_week3F2019_musicstore
+namespace COMP2084_a1_shoestore
 {
     public class Program
     {
