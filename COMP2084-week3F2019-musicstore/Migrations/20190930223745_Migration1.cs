@@ -12,7 +12,7 @@ namespace COMP2084_a1_shoestore.Migrations
                 name: "Footwear",
                 columns: table => new
                 {
-                    GenreId = table.Column<int>(nullable: false)
+                    FootwearId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true)
                 },
