@@ -9,10 +9,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using COMP2084_week3F2019_musicstore.Data;
+using COMP2084_a1_shoestore.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using COMP2084_week3F2019_musicstore.Models;
+using COMP2084_a1_shoestore.Models;
 
 namespace COMP2084_a1_shoestore
 {
@@ -43,7 +43,7 @@ namespace COMP2084_a1_shoestore
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<MusicStoreContext>(options =>
+            services.AddDbContext<ShoeStoreContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("ShoeStoreContext")));
         }
 
