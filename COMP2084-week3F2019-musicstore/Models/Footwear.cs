@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace COMP2084_week3F2019_musicstore.Models
 {
-    public class Genre
+    public class Footwear
     {
         [Key]
 

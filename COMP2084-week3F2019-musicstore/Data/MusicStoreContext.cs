@@ -14,7 +14,7 @@ namespace COMP2084_week3F2019_musicstore.Models
         {
         }
 
-        public DbSet<COMP2084_week3F2019_musicstore.Models.Genre> Genre { get; set; }
+        public DbSet<COMP2084_week3F2019_musicstore.Models.Footwear> Genre { get; set; }
 
         public DbSet<COMP2084_week3F2019_musicstore.Models.Album> Album { get; set; }
 

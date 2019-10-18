@@ -5,20 +5,20 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using COMP2084_week3F2019_musicstore.Models;
+using COMP2084_a1_shoestore.Models;
 
 namespace COMP2084_week3F2019_musicstore.Controllers
 {
-    public class ShoeTypesController : Controller
+    public class ShoeTypeController : Controller
     {
-        private readonly MusicStoreContext _context;
+        private readonly ShoeStoreContext _context;
 
-        public ShoeTypesController(MusicStoreContext context)
+        public ShoeTypeController(ShoeStoreContext context)
         {
             _context = context;
         }
 
-        // GET: Albums
+        // GET: ShoeType
         public async Task<IActionResult> Index()
         {
             return View(await _context.Album.ToListAsync());
@@ -53,7 +53,7 @@ namespace COMP2084_week3F2019_musicstore.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AlbumId,GenreId,Name,Artist,ReleaseDate")] Album album)
+        public async Task<IActionResult> Create([Bind("ShoeId,ShoeTypeId,ShoeName,Brand,Color,Size")] Album album)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace COMP2084_week3F2019_musicstore.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AlbumId,GenreId,Name,Artist,ReleaseDate")] Album album)
+        public async Task<IActionResult> Edit(int id, [Bind("ShoeId,ShoeTypeId,ShoeName,Brand,Color,Size")] Album album)
         {
             if (id != album.AlbumId)
             {
