@@ -14,5 +14,9 @@ namespace COMP2084_a1_shoestore.Data
         {
         }
         public DbSet<COMP2084_a1_shoestore.Models.Shoe> Shoe { get; set; }
+
+        public DbSet<COMP2084_a1_shoestore.Models.ApplicationUser> User { get; set; }
+
+        public DbSet<COMP2084_a1_shoestore.Models.ApplicationRole> Role { get; set; }
     }
 }
